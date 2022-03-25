@@ -1,14 +1,27 @@
 This work is taken from MCAN repo (https://github.com/MILVLG/mcan-vqa). Download the pretrained epoch13.pkl file given by the authors.
 
-To test performance using swapmix on attributes of a trained model 
+
+To test performance using swapmix on objects of a trained model
 ```
-python3 benchmark_frcnn/run_evaluate.py --CKPT_PATH=/data/b/vipul/pretrained/ckpt_small/epoch13.pkl --GPU='7' --OUTPUT_JSON=<output file path> --TYPE attributes
+python3 benchmark/run_evaluate.py --CKPT_PATH=/data/b/vipul/pretrained/ckpt_small/epoch13.pkl --GPU='7' --OUTPUT_JSON=<output file path> 
 ```
 
-To test performance using swapmix on objects of a trained model 
+To test performance using swapmix on attributes of a trained model 
 ```
-python3 benchmark_frcnn/run_evaluate.py --CKPT_PATH=/data/b/vipul/pretrained/ckpt_small/epoch13.pkl --GPU='7' --OUTPUT_JSON=<output file path> --TYPE objects
+python3 benchmark/run_evaluate.py --CKPT_PATH=/data/b/vipul/pretrained/ckpt_small/epoch13.pkl --GPU='7' --OUTPUT_JSON=<output file path> --TYPE attributes
 ```
+
+
+To test performance of a scene graph model using swapmix on objects of a trained model
+```
+python3 benchmark/run_evaluate_scene.py --CKPT_PATH=/data/b/vipul/pretrained/ckpt_small/epoch13.pkl --GPU='7' --OUTPUT_JSON=<output file path> 
+```
+
+To test performance using swapmix on attributes of a trained model 
+```
+python3 benchmark/run_evaluate_scene.py --CKPT_PATH=/data/b/vipul/pretrained/ckpt_small/epoch13.pkl --GPU='7' --OUTPUT_JSON=<output file path> --TYPE attributes
+```
+
 
 To perform swapmix training using FasterRCNN features 
 ```
