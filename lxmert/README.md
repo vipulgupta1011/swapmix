@@ -1,4 +1,17 @@
-This work is built on LXMERT repo (https://github.com/airsplay/lxmert). Download the pretrained models and GQA datasets given by the authors.
+This work is built on LXMERT repo (https://github.com/airsplay/lxmert). 
 
-Download gqa scene graphs and questions from (https://cs.stanford.edu/people/dorarad/gqa/download.html)
+To evaluate model on object or attribute perturbations 
+```
+bash run/frcnn_evaluate.bash <gpu id> --load <model path> --test valid --OUTPUT_JSON <output file path> --CLASS <objects/attributes>
+```
+
+To finetune model on GQA dataset :
+```
+bash run/frcnn_train.bash <gpu id> <experiment name>
+```
+
+To train model using SwapMix :
+```
+bash run/frcnn_train.bash <gpu id> <experiment name> --SwapMix
+```
 
