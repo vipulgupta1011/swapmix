@@ -20,10 +20,13 @@ class Cfgs():
         self.TESTDEV_FEAT_PATH = self.IMG_FEAT_PATH + 'gqa_testdev_obj36.tsv'
         self.GQA_FEAT_PATH = self.IMG_FEAT_PATH + 'vg_gqa_obj36.tsv'
         self.OBJ_MATCHING = self.GQA_PATH + 'matching/obj_matching.json'
+        self.ATTR_MATCHING = self.GQA_PATH + 'matching/attr_matching.json'
         self.NO_OF_CHANGES = 5
         self.VAL_FASTRCNN_MATCHING = '/data/b/vipul/lxmert/data/val_dataset_mapping_new.json'
         self.TRAIN_FASTRCNN_MATCHING = '/data/b/vipul/lxmert/data/train_dataset_mapping.json'
         self.OUTPUT_JSON = '/data/b/vipul/output_vqa/results/lxmert/fastrcnn/irrelevant_objects_including_random.json'
+
+        self.SCENE_MATCHING = '/data/b/vipul/datasets/gqa/scene_graphs/object_mapping.json'
 
         self.TRAIN_IMG_LIST_PATH = self.GQA_PATH + 'images_split/train.json'
         self.VAL_IMG_LIST_PATH = self.GQA_PATH + 'images_split/val.json'
@@ -35,4 +38,8 @@ class Cfgs():
         self.VAL_QUES_PATH = self.GQA_PATH + 'images_split/val_questions_new.json'
 
         self.VAL_ANS_PATH = self.GQA_PATH + 'images_split/val_answers_new.json'
+
+        self.GQA_VOCAB = self.GQA_PATH + 'gqa_vocab_taxo.json'
+        self.GQA_EMBEDDING = self.GQA_PATH + 'attrlabel_glove_taxo.npy'
+
 
