@@ -10,12 +10,15 @@ class PATH:
     def __init__(self):
 
         # vqav2 dataset root path
-        self.DATASET_PATH = '/data/b/vipul/datasets/vqa/'
+        self.ROOT_DIR = '~/swapmix/data/'
+        self.DATASET_PATH = self.ROOT + 'vqa/'
 
         # bottom up features root path
-        self.DIR = '/data/b/vipul/output_vqa/'
-        self.GQA_PATH = '/data/b/vipul/datasets/gqa/'
-        self.FASTRCNN_FEATURES_PATH = "/data/b/vipul/datasets/gqa/obj_features/objects/"
+        self.DIR = self.ROOT + 'output/'
+        self.GQA_PATH = self.ROOT + 'gqa/'
+        #self.FASTRCNN_FEATURES_PATH = "/data/c/vipul/obj_features"
+        self.FASTRCNN_FEATURES_PATH = self.ROOT + "obj_features/"
+        self.FASTRCNN_FEATURES_INFO = self.ROOT + "gqa/frcnn_feature_info/"
 
         self.init_path()
 
@@ -44,7 +47,7 @@ class PATH:
             'val': self.GQA_PATH + 'images_split/val_questions.json',
         }
 
-        #self.GQA_SMALL_QUESTION_PATH = {
+        ##self.GQA_SMALL_QUESTION_PATH = {
         self.GQA_QUESTION_PATH_NEW = {
             'train': self.GQA_PATH + 'images_split/train_questions_new.json',
             'val': self.GQA_PATH + 'images_split/val_questions_new.json',
@@ -56,7 +59,6 @@ class PATH:
             'train': self.GQA_PATH + 'images_split/train_answers.json',
             #'val': self.GQA_PATH + 'images_split/small_train/small_val_answers.json',
             'val': self.GQA_PATH + 'images_split/val_answers.json',
-            #'vg': self.GQA_PATH + 'VG_annotations.json',
         }
         self.f0_path = self.FASTRCNN_FEATURES_PATH + 'gqa_objects_0.h5'
         self.f1_path = self.FASTRCNN_FEATURES_PATH + 'gqa_objects_1.h5'
@@ -75,16 +77,15 @@ class PATH:
         self.f14_path = self.FASTRCNN_FEATURES_PATH + 'gqa_objects_14.h5'
         self.f15_path = self.FASTRCNN_FEATURES_PATH + 'gqa_objects_15.h5'
 
-        self.FASTRCNN_INFO_FILE = self.FASTRCNN_FEATURES_PATH + 'gqa_objects_info.json'
-        self.FASTRCNN_MATCHING = self.FASTRCNN_FEATURES_PATH + 'object_mapping_new.json'
-        #self.SMALL_ANS_PATH = self.GQA_PATH + 'images_split/small_ans.json'
-        #self.SMALL_ANS_PATH = self.GQA_PATH + 'images_split/val_answers_new.json'
+        self.FASTRCNN_INFO_FILE = self.FASTRCNN_FEATURES_INFO + 'gqa_objects_info.json'
+        self.FASTRCNN_MATCHING = self.FASTRCNN_FEATURES_INFO + 'object_mapping_new.json'
+        ##self.SMALL_ANS_PATH = self.GQA_PATH + 'images_split/small_ans.json'
         self.VAL_ANS_PATH = self.GQA_PATH + 'images_split/val_answers_new.json'
         self.VAL_SCENE_GRAPH = self.GQA_PATH + 'scene_graphs/val_sceneGraphs.json'
-        #self.VAL_SCENE_GRAPH = self.GQA_PATH + 'scene_graphs/small_val_sceneGraphs.json'
+        ##self.VAL_SCENE_GRAPH = self.GQA_PATH + 'scene_graphs/small_val_sceneGraphs.json'
         self.TRAIN_SCENE_GRAPH = self.GQA_PATH + 'scene_graphs/train_sceneGraphs.json'
-        self.GQA_VOCAB = self.GQA_PATH + 'gqa_vocab_taxo.json'
-        self.GQA_EMBEDDING = self.GQA_PATH + 'attrlabel_glove_taxo.npy'
+        self.GQA_VOCAB = self.GQA_PATH + 'glove_embds/gqa_vocab_taxo.json'
+        self.GQA_EMBEDDING = self.GQA_PATH + 'glove_embds/attrlabel_glove_taxo.npy'
         self.RESULT_PATH = self.DIR + 'results/fastrcnn/'
         self.PRED_PATH = self.DIR + 'results/pred/'
         self.CACHE_PATH = self.DIR + 'results/cache/'
@@ -93,8 +94,8 @@ class PATH:
         self.OBJ_MATCHING = self.GQA_PATH + 'matching/obj_matching.json'
         self.ATTR_MATCHING = self.GQA_PATH + 'matching/attr_matching.json'
         self.SCENE_OBJECT_MATCHING = self.GQA_PATH + 'scene_graphs/object_mapping.json'
-        self.OUTPUT_JSON = self.RESULT_PATH + 'irrelevant_objects_including_random_1.json' 
-        self.ATTR_OUTPUT_JSON = self.RESULT_PATH + 'b1_attr_output_small.json'
+        self.OUTPUT_JSON = self.RESULT_PATH + 'temp.json' 
+        self.ATTR_OUTPUT_JSON = self.RESULT_PATH + 'temp_attr.json'
 
         if 'results' not in os.listdir(self.DIR + ''):
             os.mkdir(self.DIR + 'results')
