@@ -21,20 +21,19 @@ from numpyencoder import NumpyEncoder
 class Execution:
     def __init__(self, __C):
         self.__C = __C
-
-        print('Loading training set ........')
+        print('Loading validation set ........')
         self.dataset = DataSet(__C)
 
         ## Loading fastrcnn featres
         self.frcnn = FRCNN(__C)
 
-        self.dataset_eval = None
-        if __C.EVAL_EVERY_EPOCH:
-            __C_eval = copy.deepcopy(__C)
-            setattr(__C_eval, 'RUN_MODE', 'val')
+        #self.dataset_eval = None
+        #if __C.EVAL_EVERY_EPOCH:
+        #    __C_eval = copy.deepcopy(__C)
+        #    setattr(__C_eval, 'RUN_MODE', 'val')
 
-            print('Loading validation set for per-epoch evaluation ........')
-            self.dataset_eval = DataSet(__C_eval)
+        #    print('Loading validation set for per-epoch evaluation ........')
+        #    self.dataset_eval = DataSet(__C_eval)
 
 
     def train(self, dataset, dataset_eval=None):
@@ -320,6 +319,8 @@ class Execution:
         token_size = dataset.token_size
         ans_size = dataset.ans_size
         pretrained_emb = dataset.pretrained_emb
+
+        pdb.set_trace()
 
         net = Net(
             self.__C,
