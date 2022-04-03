@@ -1,12 +1,12 @@
 class Cfgs():
     def __init__(self):
 
+        self.ROOT_DIR = '~/swapmix/data/'
         self.ALLOW_RANDOM = True
-        #self.CLASS = 'objects'
 
-        self.GQA_PATH = '/data/b/vipul/datasets/gqa/'
-        self.DATA_PATH =  '/data/c/zhuowan/gqa_project/lxmert/data/gqa/'
-        self.IMG_FEAT_PATH = '/data/c/zhuowan/gqa_project/lxmert/data/vg_gqa_imgfeat/'
+        self.GQA_PATH = self.ROOT_DIR + 'gqa/'
+        self.IMG_FEAT_PATH = self.ROOT + 'obj_features/'
+        self.DATA_PATH =self.GQA_PATH + 'lxmert/'
 
         self.QUESTION_PATH = {
             'train' : self.DATA_PATH + 'train.json',
@@ -16,17 +16,18 @@ class Cfgs():
 
         self.ANS2LABEL = self.DATA_PATH + 'trainval_ans2label.json'
         self.LABEL2ANS = self.DATA_PATH + 'trainval_label2ans.json'
-        
-        self.TESTDEV_FEAT_PATH = self.IMG_FEAT_PATH + 'gqa_testdev_obj36.tsv'
+
+        #Not useful for this experiment 
+        #self.TESTDEV_FEAT_PATH = self.IMG_FEAT_PATH + 'gqa_testdev_obj36.tsv'
         self.GQA_FEAT_PATH = self.IMG_FEAT_PATH + 'vg_gqa_obj36.tsv'
         self.OBJ_MATCHING = self.GQA_PATH + 'matching/obj_matching.json'
         self.ATTR_MATCHING = self.GQA_PATH + 'matching/attr_matching.json'
         self.NO_OF_CHANGES = 5
-        self.VAL_FASTRCNN_MATCHING = '/data/b/vipul/lxmert/data/val_dataset_mapping_new.json'
-        self.TRAIN_FASTRCNN_MATCHING = '/data/b/vipul/lxmert/data/train_dataset_mapping.json'
-        self.OUTPUT_JSON = '/data/b/vipul/output_vqa/results/lxmert/fastrcnn/irrelevant_objects_including_random.json'
+        self.VAL_FASTRCNN_MATCHING = self.GQA_PATH + 'matching/val_dataset_mapping_new.json'
+        self.TRAIN_FASTRCNN_MATCHING = self.GQA_PATH + 'matching/train_dataset_mapping.json' 
+        self.OUTPUT_JSON = self.ROOT_DIR + 'output/temp.json' 
 
-        self.SCENE_MATCHING = '/data/b/vipul/datasets/gqa/scene_graphs/object_mapping.json'
+        self.SCENE_MATCHING = self.GQA_PATH + 'scene_graphs/object_mapping.json'
 
         self.TRAIN_IMG_LIST_PATH = self.GQA_PATH + 'images_split/train.json'
         self.VAL_IMG_LIST_PATH = self.GQA_PATH + 'images_split/val.json'
@@ -39,7 +40,7 @@ class Cfgs():
 
         self.VAL_ANS_PATH = self.GQA_PATH + 'images_split/val_answers_new.json'
 
-        self.GQA_VOCAB = self.GQA_PATH + 'gqa_vocab_taxo.json'
-        self.GQA_EMBEDDING = self.GQA_PATH + 'attrlabel_glove_taxo.npy'
+        self.GQA_VOCAB = self.GQA_PATH + 'glove_embds/gqa_vocab_taxo.json'
+        self.GQA_EMBEDDING = self.GQA_PATH + 'glove_embds/attrlabel_glove_taxo.npy'
 
 
