@@ -21,8 +21,7 @@ def parse_args():
     parser.add_argument('--RUN', dest='RUN_MODE',
                       choices=['train', 'val', 'test'],
                       help='{train, val, test}',
-                      default='val', 
-                      type=str, required=True)
+                      default='val', type=str)
 
     parser.add_argument('--MODEL', dest='MODEL',
                       choices=['small', 'large'],
