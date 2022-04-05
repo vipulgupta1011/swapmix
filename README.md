@@ -9,7 +9,7 @@ The code has been divided into mcan and lxmert folders. Inside each folder we pr
 2. Finetuning models using SwapMix as data augmentation technique 
 3. Training model with perfect sight.
 
-We modified the questions and answers file, and scene graph files provided at [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) site. You can download these files along with other files needed for SwapMix implementation from [here](https://drive.google.com/file/d/1Zas1Nag3n-ipvNYW_zSkL7Ipo0ap8aj_/view?usp=sharing) and place it at <code>.
+We modified the questions and answers file, and scene graph files provided at [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) site. You can download these files along with other files needed for SwapMix implementation from [here](https://drive.google.com/file/d/1Zas1Nag3n-ipvNYW_zSkL7Ipo0ap8aj_/view?usp=sharing) and place it at <code>data/gqa</code>
 
 
 Initialize a virtual envirnoment using the requirements.txt file in each folder
