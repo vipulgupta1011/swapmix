@@ -1,4 +1,4 @@
-#SwapMix
+# SwapMix
 
 Implementation of SwapMix approach to measure visual bias for visual question answering
 
