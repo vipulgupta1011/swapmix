@@ -1,6 +1,6 @@
 # SwapMix
 
-Implementation of SwapMix approach to measure visual bias for visual question answering([SwapMix: Diagnosing and Regularizing the Over-Reliance on Visual Context in Visual Question Answering, Vipul et al., CVPR22](https://arxiv.org/abs/2204.02285))
+Implementation of SwapMix approach to measure visual bias for visual question answering([SwapMix: Diagnosing and Regularizing the Over-Reliance on Visual Context in Visual Question Answering](https://arxiv.org/abs/2204.02285)), Vipul et al., CVPR22
 
 ![Motivation_new](https://user-images.githubusercontent.com/42180235/162658751-74ab2baf-2133-499c-8433-c44d5a2b4a4b.png)
 
