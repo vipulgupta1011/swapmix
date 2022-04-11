@@ -1,4 +1,4 @@
-This work is built on LXMERT repo (https://github.com/airsplay/lxmert). 
+This folder contains code for measuring visual bias on [LXMERT](https://github.com/airsplay/lxmert). 
 
 Install the requirements provided in the requirement.txt file.
 
