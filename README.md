@@ -1,3 +1,5 @@
+#SwapMix
+
 Implementation of SwapMix approach to measure visual bias for visual question answering
 
 The model looks at an image and a question. Then we change the visual context (irrelevant objects to the question) in the image. For each question we make multiple copies of image by changing context. Ideally, we would expect the model's prediction to remain consistent with context switch.
