@@ -44,7 +44,7 @@ To finetune the pretrained model provided by authors on GQA dataset
 python3 run_files/run_train.py --CKPT_PATH=<pretrained ckpt path> --GPU=<gpu id>
 ```
 
-To perform training using scene graph embeddings 
+To perform training using perfect sight embeddings
 ```
 python3 run_files/run_train.py --CKPT_PATH=<pretrained ckpt path> --GPU=<gpu id> --FEATURES='scene_graph'
 ```
