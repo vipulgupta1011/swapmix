@@ -1,5 +1,7 @@
 This work is built on LXMERT repo (https://github.com/airsplay/lxmert). 
 
+Install the requirements provided in the requirement.txt file.
+
 ## Measuring visual bias
 
 We measure visual bias based on irrelevant objects and attributes.
