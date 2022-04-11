@@ -5,6 +5,8 @@ Implementation of SwapMix approach to measure visual bias for visual question an
 ![Motivation_new](https://user-images.githubusercontent.com/42180235/162658751-74ab2baf-2133-499c-8433-c44d5a2b4a4b.png)
 
 
+We provide a new way to benchmark in a VQA model by perturbing the visual context i.e. irrelevant objects in the image.
+
 The model looks at an image and a question. Then we change the visual context (irrelevant objects to the question) in the image. For each question we make multiple copies of image by changing context. Ideally, we would expect the model's prediction to remain consistent with context switch.
 
 In this repo, we apply SwapMix to [MCAN](https://github.com/MILVLG/mcan-vqa) and [LXMERT](https://github.com/airsplay/lxmert). We use [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) dataset for our analysis.
