@@ -14,7 +14,7 @@ Download the pretrained epoch13.pkl file given by the authors.
 ## Measuring visual bias
 We measure context reliance on irrelevant objects and attributes. 
 
-For calculating context reliance on irrelevant objects, we swap the object with another objectof different class. For example, swapping bus with car. To calculate context reliance on attributes, we swap the irrelevant object with object of same class but with differnt attributes. For example, swapping blue bus with red bias.
+For calculating context reliance on irrelevant objects, we swap the object with anotherobject of different class. For example, swapping bus with car. To calculate context reliance on attributes, we swap the irrelevant object with object of same class but with differnt attributes. For example, swapping blue bus with red bias.
 
 To measure context reliance based on objects/attribures of a trained model
 ```
