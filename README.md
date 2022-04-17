@@ -13,7 +13,7 @@ The model looks at an image and a question. Then we change the visual context (i
 In this repo, we apply SwapMix to [MCAN](https://github.com/MILVLG/mcan-vqa) and [LXMERT](https://github.com/airsplay/lxmert). We use [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) dataset for our analysis.
 
 
-##Implementation Details
+## Implementation Details
 The code has been divided into mcan and lxmert folders. Inside each folder we provide implementation for 
 1. Measuring visual bias using SwapMix
 2. Finetuning models using SwapMix as data augmentation technique 
