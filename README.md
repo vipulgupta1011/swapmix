@@ -12,6 +12,8 @@ The model looks at an image and a question. Then we change the visual context (i
 
 In this repo, we apply SwapMix to [MCAN](https://github.com/MILVLG/mcan-vqa) and [LXMERT](https://github.com/airsplay/lxmert). We use [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) dataset for our analysis.
 
+
+##Implementation Details
 The code has been divided into mcan and lxmert folders. Inside each folder we provide implementation for 
 1. Measuring visual bias using SwapMix
 2. Finetuning models using SwapMix as data augmentation technique 
@@ -19,15 +21,18 @@ The code has been divided into mcan and lxmert folders. Inside each folder we pr
 
 We also provide the model trained using SwapMix as data augmentation and trained with perfect sight. Link to the models is provided inside each folder.
 
+
 ## Download Dataset
 
-We restructured the format of question, answer, and scene graph files provided by [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) a bit. You can download these files along with other files needed for SwapMix implementation from [here](https://drive.google.com/file/d/1Zas1Nag3n-ipvNYW_zSkL7Ipo0ap8aj_/view?usp=sharing) and place it at <code>data/gqa</code> folder. 
+We restructured the format of question, answer, and scene graph files provided by [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) a bit. You can download these files along with other files needed for SwapMix implementation from [here](https://drive.google.com/file/d/1Zas1Nag3n-ipvNYW_zSkL7Ipo0ap8aj_/view?usp=sharing) and place it at <code>data/gqa</code> folder.
+ 
 We recommend to use object features provided by GQA. Download the features from [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html)
 
 
 ## Evaluation
 
 We measure visual bias of the model for both irrelevant object changes and attribute changes seperately. We combine the results for both changes to measure visual bias of the model
+
 
 ## Citation
 If you like our work and find this code useful, consider citing our work :
@@ -39,6 +44,7 @@ If you like our work and find this code useful, consider citing our work :
     year={2022}
 }
 ```
+
 
 ## References
 - [Deep Modular Co-Attention Networks for Visual Question Answering](https://openaccess.thecvf.com/content_CVPR_2019/html/Yu_Deep_Modular_Co-Attention_Networks_for_Visual_Question_Answering_CVPR_2019_paper.html), Zhou et al., CVPR 2019
