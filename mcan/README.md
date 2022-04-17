@@ -6,34 +6,46 @@ Download the questions and annotations provided by MCAN or you can download it f
 
 Download the object features provided by [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) and place them at <code>data/obj_features</code>.
 
-To test performance using swapmix on objects/attribures of a trained model.
+## Use a pretrained model
+Download the pretrained epoch13.pkl file given by the authors.
+
+
+## Measuring visual bias
+We measure visual bias based on irrelevant objects and attributes.
+
+To measure visual bias based on objects/attribures of a trained model
 ```
 python3 run_files/run_evaluate.py --CKPT_PATH=<path to ckpt file> --GPU=<gpu id> --OUTPUT_JSON=<output file path> --TYPE <object/attributes>
 ```
 
-To test performance using swapmix on objects/attribures of a model trained using perfect sight
+To measure visual bias based on objects/attribures of a model trained using perfect sight embeddings
 ```
 python3 run_files/run_evaluate.py --CKPT_PATH=<path to ckpt file> --GPU=<gpu id> --OUTPUT_JSON=<output file path> --TYPE <object/attributes> --FEATURES scene_graph
 ```
 
-To perform swapmix training
+
+## Training using SwapMix
+We also finetune models using SwapMix as data augmentation technique and show that context reliance of the model decreases and effective accuracy increases.
+
+To finetune a model using SwapMix as data augmentation
 ```
 python3 run_files/run_swapmix.py --CKPT_PATH=<pretrained ckpt path> --GPU=<gpu id>
 ```
 
-To perform swapmix training using perfect sight embeddings
+To finetune a model using SwapMix as data augmentation using perfect sight embeddings
 ```
 python3 run_files/run_swapmix.py --CKPT_PATH=<pretrained ckpt path> --GPU=<gpu id> --FEATURES='scene_graph'
 ```
 
-To finetune pretrained model on GQA dataset
+
+## Finetuning on GQA dataset 
+To finetune the pretrained model provided by authors on GQA dataset
 ```
 python3 run_files/run_train.py --CKPT_PATH=<pretrained ckpt path> --GPU=<gpu id>
 ```
 
-To perform training using scene graph embeddings 
+To perform training using perfect sight embeddings
 ```
 python3 run_files/run_train.py --CKPT_PATH=<pretrained ckpt path> --GPU=<gpu id> --FEATURES='scene_graph'
 ```
 
-Download the pretrained epoch13.pkl file given by the authors.

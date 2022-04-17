@@ -29,17 +29,6 @@ We recommend to use object features provided by GQA. Download the features from 
 
 We measure visual bias of the model for both irrelevant object changes and attribute changes seperately. We combine the results for both changes to measure visual bias of the model
 
-## Citation
-If you like our work and find this code useful, consider citing our work :
-```
-@inproceedings{gupta2022swapmix,
-    title={SwapMix: Diagnosing and Regularizing the Over-Reliance on Visual Context in Visual Question Answering},
-    author={Gupta, Vipul and Li, Zhuowan and Kortylewski, Adam and Zhang, Chenyu and Li, Yingwei and Yuille, Alan},
-    booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-    year={2022}
-}
-```
-
 ## References
 - [Deep Modular Co-Attention Networks for Visual Question Answering](https://openaccess.thecvf.com/content_CVPR_2019/html/Yu_Deep_Modular_Co-Attention_Networks_for_Visual_Question_Answering_CVPR_2019_paper.html), Zhou et al., CVPR 2019
 - [LXMERT: Learning Cross-Modality Encoder Representations from Transformers](https://aclanthology.org/D19-1514.pdf), Hao et  al., EMNLP 2019
