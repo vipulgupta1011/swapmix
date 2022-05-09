@@ -79,8 +79,8 @@ class GQA:
         else:
             self.optim = args.optimizer(list(self.model.parameters()), args.lr)
 
-        #self.output = args.output
-        #os.makedirs(self.output, exist_ok=True)
+        self.output = args.output
+        os.makedirs(self.output, exist_ok=True)
 
     def train(self, train_tuple, eval_tuple):
         dset, loader, evaluator = train_tuple
