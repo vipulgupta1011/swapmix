@@ -23,7 +23,6 @@ def get_tuple(splits: str, bs:int, shuffle=False, drop_last=False) -> DataTuple:
     dset = GQADataset(splits)
 
     if args.SwapMix :
-        pdb.set_trace()
         tset = GQATorchDataset_swapmix(dset)
     else :
         tset = GQATorchDataset(dset)
