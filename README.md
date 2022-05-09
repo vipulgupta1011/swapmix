@@ -34,6 +34,14 @@ We recommend to use object features provided by GQA. Download the features from 
 We measure visual bias of the model for both irrelevant object changes and attribute changes seperately. We combine the results for both changes to measure visual bias of the model
 
 
+## Evaluating new model for visual bias
+SwapMix can be used to measure visual bias on any VQA model
+
+Changes are needed on data loading and testing part. The current code iterates over each question indiviually to get predictions for all SwapMix perturbations. 
+
+Details for measuring visual bias on a new model can be found [here](https://github.com/vipulgupta1011/swapmix/tree/master/swapmix)
+
+
 ## Citation
 If you like our work and find this code useful, consider citing our work :
 ```
