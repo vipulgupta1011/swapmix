@@ -5,7 +5,7 @@ class Cfgs():
         self.ALLOW_RANDOM = True
 
         self.GQA_PATH = self.ROOT_DIR + 'gqa/'
-        self.IMG_FEAT_PATH = self.ROOT + 'obj_features/'
+        self.IMG_FEAT_PATH = self.ROOT_DIR + 'obj_features/'
         self.DATA_PATH =self.GQA_PATH + 'lxmert/'
 
         self.QUESTION_PATH = {
