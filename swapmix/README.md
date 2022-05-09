@@ -1,3 +1,5 @@
+# Implementation steps for a new model
+
 Steps to measure visual bias for a new model
 
 1. Initialize FRCNN() function in <code>frcnn_modify.py</code> and GQADataset() function inside <code>gqa.py</code>.
