@@ -320,7 +320,7 @@ class Execution:
         ans_size = dataset.ans_size
         pretrained_emb = dataset.pretrained_emb
 
-        pdb.set_trace()
+        #pdb.set_trace()
 
         net = Net(
             self.__C,
