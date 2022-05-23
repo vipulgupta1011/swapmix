@@ -10,13 +10,13 @@ class PATH:
     def __init__(self):
 
         # vqav2 dataset root path
-        self.ROOT_DIR = '~/swapmix/data/'
+        self.ROOT = '~/swapmix/data/'
         self.DATASET_PATH = self.ROOT + 'vqa/'
 
         # bottom up features root path
         self.DIR = self.ROOT + 'output/'
         self.GQA_PATH = self.ROOT + 'gqa/'
-        #self.FASTRCNN_FEATURES_PATH = "/data/c/vipul/obj_features"
+
         self.FASTRCNN_FEATURES_PATH = self.ROOT + "obj_features/"
         self.FASTRCNN_FEATURES_INFO = self.ROOT + "gqa/frcnn_feature_info/"
 
