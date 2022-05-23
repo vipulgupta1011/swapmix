@@ -1,8 +1,8 @@
 # The name of this experiment.
-name=$2
+#name=$2
 
 # Save logs and models under snap/gqa; make backup.
-output=/home/vipul/results/test/$name
+#output=/home/vipul/results/test/$name
 #mkdir -p $output/src
 #cp -r src/* $output/src/
 #cp $0 $output/run.bash
