@@ -19,10 +19,6 @@ The code has been divided into [MCAN](https://github.com/vipulgupta1011/swapmix/
 2. Finetuning models using SwapMix as data augmentation technique 
 3. Training model with perfect sight.
 
-Before benchmarking visual bias for these models, we finetune them on GQA train dataset for better performance. 
-
-We provide (1) finetuned model (2) model trained using SwapMix as data augmentation (3) model trained with perfect sight (4) model trained with perfect sight and using SwapMix as data augmentation technique. Please download the models from here : [MCAN trained models](https://drive.google.com/drive/folders/1PJmj2fnNM-ixoD4v54GEkRl0Uquuc8QT?usp=sharing), [LXMERT trained models](https://drive.google.com/drive/folders/1t0dfYG3A0YvFFvpHXhLEmugpu95Lbl0f?usp=sharing)
-
 Perfect sight implementation differs from traditional FasterRCNN at net.py(input embedding layer is changed frmo 1024 dim to 256 dim) and swapping part. Rest all the code remains the same.
 
 ## Download Dataset
@@ -35,6 +31,11 @@ We recommend to use object features provided by GQA. Download the features from 
 ## Evaluation
 
 We measure visual bias of the model for both irrelevant object changes and attribute changes seperately. We combine the results for both changes to measure visual bias of the model
+
+Before benchmarking visual bias for these models, we finetune them on GQA train dataset for better performance. Models are evaluated on GQA val set.
+
+We provide (1) finetuned model (2) model finetuned using SwapMix as data augmentation (3) model trained with perfect sight (4) model trained with perfect sight and using SwapMix as data augmentation technique. Please download the models from here : [MCAN trained models](https://drive.google.com/drive/folders/1PJmj2fnNM-ixoD4v54GEkRl0Uquuc8QT?usp=sharing), [LXMERT trained models](https://drive.google.com/drive/folders/1t0dfYG3A0YvFFvpHXhLEmugpu95Lbl0f?usp=sharing)
+
 
 
 ## Evaluating new model for visual bias
