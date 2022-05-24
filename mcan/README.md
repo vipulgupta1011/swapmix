@@ -7,8 +7,10 @@ Download the questions and annotations provided by MCAN or you can download it f
 
 Download the object features provided by [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) and place them at <code>data/obj_features</code>.
 
-## Use a pretrained model
-Download the pretrained epoch13.pkl file given by the authors.
+## Download models
+Download the pretrained epoch13.pkl model given by the authors. This model gives bad performance as it has not been trained on GQA train set.  We provide (1) finetuned model (2) model finetuned using SwapMix as data augmentation (3) model trained with perfect sight (4) model trained with perfect sight and using SwapMix as data augmentation technique. Please download the models from[MCAN trained models](https://drive.google.com/drive/folders/1PJmj2fnNM-ixoD4v54GEkRl0Uquuc8QT?usp=sharing)
+
+We finetune models over the pretrained epoch13.pkl model.
 
 
 ## Measuring visual bias
