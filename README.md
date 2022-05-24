@@ -14,13 +14,16 @@ In this repo, we apply SwapMix to [MCAN](https://github.com/MILVLG/mcan-vqa) and
 
 
 ## Implementation Details
-The code has been divided into mcan and lxmert folders. Inside each folder we provide implementation for 
+The code has been divided into [mcan](https://github.com/vipulgupta1011/swapmix/tree/master/mcan#readme) and [lxmert](https://github.com/vipulgupta1011/swapmix/tree/master/lxmert#readme) folders. Inside each folder we provide implementation for 
 1. Measuring visual bias using SwapMix
 2. Finetuning models using SwapMix as data augmentation technique 
 3. Training model with perfect sight.
 
-We also provide the model trained using SwapMix as data augmentation and trained with perfect sight. Link to the models is provided inside each folder.
+Before benchmarking visual bias for these models, we finetune them on GQA train dataset for better performance. 
 
+We provide (1) finetuned model (2) model trained using SwapMix as data augmentation (3) model trained with perfect sight (4) model trained with perfect sight and using SwapMix as data augmentation technique. Link to the models is provided inside each folder.
+
+Perfect sight implementation differs from traditional FasterRCNN at net.py(input embedding layer is changed frmo 1024 dim to 256 dim) and swapping part. Rest all the code remains the same.
 
 ## Download Dataset
 
