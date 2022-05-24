@@ -217,7 +217,6 @@ class GQATorchDataset(Dataset):
         if eval_class == 'objects' :
             self.iid_to_img_feat = self.GQA_with_scene_graph.extractembeddings(self.list_images)
         if eval_class == 'attributes' :
-            pdb.set_trace()
             self.iid_to_img_feat = self.GQA_with_scene_graph.extractembeddings_attr(self.list_images)
 
         #img_data = []
