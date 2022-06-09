@@ -1,14 +1,15 @@
 import json
 import argparse
+import pdb
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--file')
-parser.add_argument('--file1')
+parser.add_argument('--obj')
+parser.add_argument('--attr')
 args = parser.parse_args()
 
-result_obj = json.load(open(args.file))
-result_attr = json.load(open(args.file1))
+result_obj = json.load(open(args.obj))
+result_attr = json.load(open(args.attr))
 
 baseline_overall = 0
 baseline_new = 0
@@ -17,7 +18,6 @@ total_ques_only_correct = 0
 changed_obj = 0
 changed_attr = 0
 changed_ques = {}
-
 
 for img in result_obj :
     ques_res = result_obj[img]
@@ -81,8 +81,8 @@ for img in result_attr :
             changed_attr += 1
             changed_ques[ques] = {}
 
-print ('baseline : ' , float(baseline_overall)/total_ques)
-print ('changed object : ', float(changed_obj)/total_ques_only_correct)
-print ('changed attribute : ', float(changed_attr)/total_ques_only_correct)
-print ('changed combine : ', float(len(changed_ques))/total_ques_only_correct)
-print ('new_baseline : ', (float(baseline_overall - float(len(changed_ques)))/total_ques)) 
+print ('model accuracy without SwapMix : ' , float(baseline_overall)/total_ques)
+print ('object reliance: ', float(changed_obj)/total_ques_only_correct)
+print ('attribute reliance: ', float(changed_attr)/total_ques_only_correct)
+print ('context reliance : ', float(len(changed_ques))/total_ques_only_correct)
+print ('effective accuracy : ', (float(baseline_overall - float(len(changed_ques)))/total_ques)) 
