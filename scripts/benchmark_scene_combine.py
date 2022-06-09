@@ -4,13 +4,12 @@ import pdb
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--file')
-parser.add_argument('--file1')
-parser.add_argument('--only_correct', default = False)
+parser.add_argument('--obj')
+parser.add_argument('--attr')
 args = parser.parse_args()
 
-result_obj = json.load(open(args.file))
-result_attr = json.load(open(args.file1))
+result_obj = json.load(open(args.obj))
+result_attr = json.load(open(args.attr))
 
 baseline_correct = 0
 total_ques = 0
@@ -76,9 +75,9 @@ for img in result_obj :
         if original_prediction[ques] == answers[ques] :
             baseline_correct += 1
 
-        if args.only_correct :
-            if original_prediction[ques] != answers[ques] :
-                continue
+        if original_prediction[ques] != answers[ques] :
+            continue
+
         found = False
         change_output = {}
         change_output_obj = {}
@@ -172,12 +171,8 @@ for img in result_attr :
 
     for ques in perturbed_predictions :
 
-        #If original_prediction[ques] == answers[ques] :
-        #    baseline_correct += 1
-
-        if args.only_correct :
-            if original_prediction[ques] != answers[ques] :
-                continue
+        if original_prediction[ques] != answers[ques] :
+            continue
         found = False
         change_output = {}
         change_output_obj = {}
@@ -222,11 +217,11 @@ for img in result_attr :
             changed[ques] = {}
 
 
-print ('accuracy : ', float(baseline_correct)/overall_ques)
-print ('changed obj : ', float(changed_obj)/total_ques)
-print ('changed attr : ', float(changed_attr)/total_ques)
-print ('changed : ', float(len(changed))/total_ques)
-print ('new accuracy : ', (float(baseline_correct) - float(len(changed)))/overall_ques)
+print ('model accuracy without SwapMix : ', float(baseline_correct)/overall_ques)
+print ('object reliance : ', float(changed_obj)/total_ques)
+print ('attribute reliance : ', float(changed_attr)/total_ques)
+print ('context reliance : ', float(len(changed))/total_ques)
+print ('effective accuracy : ', (float(baseline_correct) - float(len(changed)))/overall_ques)
 #print ('changed_proportion : ', float(changed_proportion)/total_ques)
 #print ('changed_proportion_obj : ', float(changed_proportion_obj)/total_ques)
 
