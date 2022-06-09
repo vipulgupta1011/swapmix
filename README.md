@@ -36,7 +36,11 @@ Before benchmarking visual bias for these models, we finetune them on GQA train 
 
 We provide (1) finetuned model (2) model finetuned using SwapMix as data augmentation (3) model trained with perfect sight (4) model trained with perfect sight and using SwapMix as data augmentation technique. Please download the models from here : [MCAN trained models](https://drive.google.com/drive/folders/1PJmj2fnNM-ixoD4v54GEkRl0Uquuc8QT?usp=sharing), [LXMERT trained models](https://drive.google.com/drive/folders/1t0dfYG3A0YvFFvpHXhLEmugpu95Lbl0f?usp=sharing)
 
-
+To measure context reliance after calculating object and attribute results :
+```
+cd scripts
+python benchmark_frcnn.py --obj <SwapMix object json file>   --attr <SwapMix attribute json file>
+```
 
 ## Evaluating new model for visual bias
 SwapMix can be used to measure visual bias on any VQA model
