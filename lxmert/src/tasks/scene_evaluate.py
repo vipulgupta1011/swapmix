@@ -37,6 +37,7 @@ def get_tuple(splits: str, bs:int, shuffle=False, drop_last=False) -> DataTuple:
     return DataTuple(dataset=dset, loader=tset, evaluator=evaluator)
 
 def get_tuple_train(splits: str, bs:int, shuffle=False, drop_last=False) -> DataTuple:
+    pdb.set_trace()
     dset = GQADataset(splits)
     #tset = GQATorchDataset(dset)
     tset = None
@@ -69,7 +70,7 @@ class GQA:
         #else: 
         #    self.valid_tuple = None
 
-        print ('pass1')
+        pdb.set_trace()
         self.model = GQAModel(self.train_tuple.dataset.num_answers)
 
         # Load pre-trained weights
@@ -157,19 +158,24 @@ class GQA:
         dset, gqa_loader, evaluator = eval_tuple
         quesid2ans = {}
 
+        ans2label = json.load(open(self.__C.ANS2LABEL))
+
         num_images = len(gqa_loader.list_images)
         print ('num_images : ', num_images)
         result = {}
         start_time = time.time()
-        for idx in range(3000) :
+        for idx in range(10) :
             print (str(idx) + ' / ' + str(num_images))
             img, ques_dict, answers, img_feat_embed, changes_mapping, relevant_questions_mapping, img_feat_bbox = gqa_loader.extract(idx)
             device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
             result[img] = {}
-
+            
+            answers_idx = {}
+            for qid in answers :
+                answers_idx[qid] = ans2label[answers[qid]]
             ## change has to be made
-            result[img]['answers'] = answers
+            result[img]['answers'] = answers_idx
             for obj in img_feat_embed :
                 result[img][obj] = {}
                 result[img][obj]['changes'] = changes_mapping[obj]
