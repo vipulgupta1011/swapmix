@@ -48,6 +48,7 @@ class GQA:
         self.__C.NO_OF_CHANGES = args.NO_OF_CHANGES
         self.__C.ALLOW_RANDOM = args.ALLOW_RANDOM
 
+
         print (self.__C)
         #print ('allow random : ', str(self.__C.ALLOW_RANDOM))
         self.train_tuple = get_tuple(
@@ -151,6 +152,8 @@ class GQA:
         dset, gqa_loader, evaluator = eval_tuple
         quesid2ans = {}
 
+        ans2label = json.load(open(self.__C.ANS2LABEL))
+
         self.frcnn = FRCNN(self.__C, gqa_loader.img_data)
 
         num_images = len(gqa_loader.list_images)
@@ -209,7 +212,7 @@ class GQA:
                 n_batches = int(np.ceil(len_features/48))
 
                 result[img][ques] = {}
-                result[img][ques]["ans"] = answer
+                result[img][ques]["ans"] = ans2label[answer]
                 result[img][ques]["changes"] = changes
                 result[img][ques]["pred"] = []
                 for k in range(n_batches) :
@@ -222,6 +225,9 @@ class GQA:
                     score, label = logit.max(1)
 
                     result[img][ques]["pred"].append(label.cpu().data.numpy())
+
+            if i>5 :
+                break
 
         with open(self.__C.OUTPUT_JSON,'w+') as f :
             json.dump(result, f, indent=4, sort_keys=True, separators=(', ', ': '), ensure_ascii=False, cls=NumpyEncoder)
