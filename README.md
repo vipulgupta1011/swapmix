@@ -27,13 +27,22 @@ We restructured the format of question, answer, and scene graph files provided b
 We recommend to use object features provided by GQA. Download the features from [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html)
 
 
-## Evaluation
-
-We measure visual bias of the model for both irrelevant object changes and attribute changes seperately. We combine the results for both changes to measure visual bias of the model
-
-Before benchmarking visual bias for these models, we finetune them on GQA train dataset for better performance. Models are evaluated on GQA val set.
+## Download pretrained models
 
 We provide (1) finetuned model (2) model finetuned using SwapMix as data augmentation (3) model trained with perfect sight (4) model trained with perfect sight and using SwapMix as data augmentation technique. Please download the models from here : [MCAN trained models](https://drive.google.com/drive/folders/1PJmj2fnNM-ixoD4v54GEkRl0Uquuc8QT?usp=sharing), [LXMERT trained models](https://drive.google.com/drive/folders/1t0dfYG3A0YvFFvpHXhLEmugpu95Lbl0f?usp=sharing)
+
+
+## Evaluation
+
+We measure visual bias of the model for both irrelevant object changes and attribute changes seperately.
+
+Before benchmarking visual bias for these models, we finetune them on **GQA train dataset** for better performance. Models are evaluated on **GQA val set**.
+
+To measure visual bias for MCAN, download the dependencies and dataset from [here](https://github.com/MILVLG/mcan-vqa) and then run : 
+```
+cd mcan
+python3 run_files/run_evaluate.py --CKPT_PATH=<path to ckpt file>
+```
 
 To measure context reliance after calculating object and attribute results :
 ```
@@ -42,7 +51,7 @@ python benchmark_frcnn.py --obj <SwapMix object json file>   --attr <SwapMix att
 ```
 
 ## Evaluating new model for visual bias
-SwapMix can be used to measure visual bias on any VQA model
+SwapMix can be used to measure visual bias on any VQA model.
 
 Changes are needed on data loading and testing part. The current code iterates over each question indiviually to get predictions for all SwapMix perturbations. 
 
