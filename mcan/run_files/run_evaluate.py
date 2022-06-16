@@ -118,7 +118,7 @@ def parse_args():
                       type=str)
 
     parser.add_argument('--OUTPUT_JSON', dest='OUTPUT_JSON',
-                      type=str)
+                      default='result.json', type=str)
 
     parser.add_argument('--NO_OF_CHANGES', dest='NO_OF_CHANGES',
                       type=int)
