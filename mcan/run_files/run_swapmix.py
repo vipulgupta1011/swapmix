@@ -62,7 +62,7 @@ def parse_args():
 
     parser.add_argument('--GPU', dest='GPU',
                       help="gpu select, eg.'0, 1, 2'",
-                      type=str)
+                      default='0', type=str)
 
     parser.add_argument('--SEED', dest='SEED',
                       help='fix random seed',
