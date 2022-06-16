@@ -10,7 +10,7 @@ We provide a new way to benchmark in a VQA model by perturbing the visual contex
 
 The model looks at an image and a question. Then we change the visual context (irrelevant objects to the question) in the image. For each question we make multiple copies of image by changing context. Ideally, we would expect the model's prediction to remain consistent with context switch.
 
-This repository contains code for **measuring bias** using SwapMix and training VQA models using SwapMix as **data augmentation**. Specifically, we have applied SwapMix to [MCAN](https://github.com/MILVLG/mcan-vqa) and [LXMERT](https://github.com/airsplay/lxmert). We use [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) dataset for our analysis.
+This repository contains code for **measuring bias** using SwapMix and training VQA models using SwapMix as **data augmentation** as described in the paper. Specifically, we have applied SwapMix to [MCAN](https://github.com/MILVLG/mcan-vqa) and [LXMERT](https://github.com/airsplay/lxmert). We use [GQA](https://cs.stanford.edu/people/dorarad/gqa/download.html) dataset for our analysis.
 
 
 ## Implementation Details
@@ -19,7 +19,6 @@ The code has been divided into [MCAN](https://github.com/vipulgupta1011/swapmix/
 2. Finetuning models using SwapMix as data augmentation technique 
 3. Training model with perfect sight.
 
-Perfect sight implementation differs from traditional FasterRCNN at net.py(input embedding layer is changed frmo 1024 dim to 256 dim) and swapping part. Rest all the code remains the same.
 
 ## Download Dataset
 
